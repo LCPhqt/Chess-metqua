@@ -1,25 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import LoginForm from './component/Page/Login.jsx';
+import SignUpForm from './component/Page/SignUp.jsx';
+import Home from './component/HomePage/Home.jsx';
 
-function App() {
+const App = () => {
+  // State để quản lý form hiện tại (true = Login, false = SignUp)
+  const [isLoginMode, setIsLoginMode] = useState(true);
+
+  const switchToSignUp = () => {
+    setIsLoginMode(false);
+  };
+
+  const switchToLogin = () => {
+    setIsLoginMode(true);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={
+          isLoginMode ? (
+            <LoginForm onSwitchToSignUp={switchToSignUp} />
+          ) : (
+            <SignUpForm onSwitchToLogin={switchToLogin} />
+          )
+        } />
+        <Route path="/home" element={<Home />} />
+      </Routes>
+    </Router>
   );
-}
+};
 
 export default App;
