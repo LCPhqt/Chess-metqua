@@ -1,0 +1,168 @@
+/* src/component/GameMode/GameStatus.css */
+.game-status-container {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.game-status {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 18px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.game-status.thinking {
+    background: linear-gradient(135deg, rgba(254, 243, 199, 0.1), rgba(253, 230, 138, 0.1));
+    border: 2px solid rgba(245, 158, 11, 0.5);
+}
+
+.game-status.check {
+    background: linear-gradient(135deg, rgba(254, 202, 202, 0.1), rgba(252, 165, 165, 0.1));
+    border: 2px solid rgba(239, 68, 68, 0.5);
+}
+
+.game-status.checkmate {
+    background: linear-gradient(135deg, rgba(221, 214, 254, 0.1), rgba(196, 181, 253, 0.1));
+    border: 2px solid rgba(139, 92, 246, 0.5);
+}
+
+.game-status.stalemate {
+    background: linear-gradient(135deg, rgba(229, 231, 235, 0.1), rgba(209, 213, 219, 0.1));
+    border: 2px solid rgba(107, 114, 128, 0.5);
+}
+
+.game-status.player-turn {
+    background: linear-gradient(135deg, rgba(219, 234, 254, 0.1), rgba(191, 219, 254, 0.1));
+    border: 2px solid rgba(59, 130, 246, 0.5);
+}
+
+.game-status.bot-turn {
+    background: linear-gradient(135deg, rgba(243, 232, 255, 0.1), rgba(233, 213, 255, 0.1));
+    border: 2px solid rgba(168, 85, 247, 0.5);
+}
+
+.status-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    width: 48px;
+    height: 48px;
+}
+
+.thinking-spinner {
+    width: 24px;
+    height: 24px;
+    border: 3px solid #f59e0b;
+    border-top: 3px solid transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.status-text h3 {
+    margin: 0 0 8px 0;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.turn-indicator {
+    font-size: 1.1rem;
+    color: #ffffff;
+    font-weight: 500;
+    background: linear-gradient(135deg, rgba(219, 234, 254, 0.1), rgba(191, 219, 254, 0.1));
+    border: 2px solid rgba(59, 130, 246, 0.5);
+    border-radius: 8px;
+    padding: 10px 15px;
+    margin-top: 8px;
+    text-align: center;
+    transition: background 0.2s;
+}
+
+.game-info {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #e5e7eb;
+}
+
+.player-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: rgba(30, 64, 175, 0.08) !important;
+    /* xanh nước biển mờ */
+    border: 1.5px solid #b6d6f6;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 15px;
+    color: #1e40af;
+    box-shadow: 0 2px 8px rgba(30, 64, 175, 0.04);
+    transition: background 0.2s;
+}
+
+.player {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 10px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    background: transparent !important;
+    justify-content: flex-start;
+    text-align: left;
+    width: 100%;
+}
+
+.player.active {
+    background: linear-gradient(135deg, rgba(236, 253, 245, 0.1), rgba(209, 250, 229, 0.1));
+    border-color: rgba(16, 185, 129, 0.5);
+    transform: scale(1.02);
+}
+
+.player-icon {
+    font-size: 20px;
+}
+
+.player span:last-child {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.player.active span:last-child {
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 600;
+}
+
+/* Hiệu ứng pulse cho lượt hiện tại */
+.player.active {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: scale(1.02);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+}
