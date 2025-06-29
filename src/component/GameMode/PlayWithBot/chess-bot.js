@@ -178,7 +178,7 @@ class ChessBot {
 
         for (const move of promotionMoves) {
             // Mặc định phong hậu thành Queen
-            const newGameState = ChessEngine.makeMove(gameState, move.from, move.to, 'queen');
+            const newGameState = ChessEngine.makeMove(gameState, move.from, move.to, 'queen', 'rook', `bishop`, `knight`);
             let score = 900; // Giá trị của quân Hậu
 
             // Đánh giá vị trí sau phong hậu

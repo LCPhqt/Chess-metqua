@@ -27,11 +27,12 @@ const ChessGame = () => {
     const chessBot = new ChessBot();
 
     // Khởi tạo game và cho bot đi trước nếu bot là quân trắng
-    useEffect(() => {
-        if (botColor === 'white') {
-            handleBotMove();
-        }
-    }, []);
+    // useEffect(() => {
+    //     if (botColor === 'white' && moveHistory.length === 0) {
+    //         handleBotMove();
+    //     }
+    //     // eslint-disable-next-line
+    // }, [botColor]);
 
     // Kiểm tra trạng thái game sau mỗi nước đi
     useEffect(() => {
@@ -50,13 +51,17 @@ const ChessGame = () => {
             }
 
             // Nếu đến lượt bot và game chưa kết thúc
-            if (currentPlayer === botColor && status !== 'checkmate') {
+            if (currentPlayer === botColor && gameStatus === 'playing') {
                 handleBotMove();
             }
         } catch (error) {
             console.error("Lỗi khi kiểm tra trạng thái game:", error);
         }
-    }, [currentPlayer, gameState]);
+    }, [currentPlayer, gameStatus]);
+
+    useEffect(() => {
+        resetGame();
+    }, [playerColor]);
 
     const handleBotMove = async () => {
         try {
@@ -103,7 +108,7 @@ const ChessGame = () => {
                     setMoveHistory(prev => [...prev, {
                         from: botMove.from,
                         to: botMove.to,
-                        piece: gameState.board[botMove.from.row][botMove.from.col],
+                        piece: newGameState.board[botMove.to.row][botMove.to.col],
                         player: botColor,
                         notation: ChessEngine.getMoveNotation(gameState, botMove)
                     }]);
@@ -191,7 +196,7 @@ const ChessGame = () => {
             setMoveHistory(prev => [...prev, {
                 from,
                 to,
-                piece: gameState.board[from.row][from.col],
+                piece: newGameState.board[to.row][to.col],
                 player: playerColor,
                 notation: ChessEngine.getMoveNotation(gameState, { from, to })
             }]);
@@ -205,22 +210,24 @@ const ChessGame = () => {
 
     const handlePromotion = (pieceType) => {
         if (!promotionState) return;
-
         try {
             const { from, to } = promotionState;
-            let newGameState = ChessEngine.makeMove(gameState, from, to);
+            // Tạo bản sao trạng thái game và di chuyển tốt đến ô đích (không phong)
+            let newGameState = ChessEngine.makeTemporaryMove(gameState, from, to);
+            // Thực hiện phong cấp với quân được chọn
             newGameState = ChessEngine.promotePawn(newGameState, to.row, to.col, playerColor, pieceType);
 
             setGameState(newGameState);
             setMoveHistory(prev => [...prev, {
                 from,
                 to,
-                piece: gameState.board[from.row][from.col],
+                piece: newGameState.board[to.row][to.col],
                 player: playerColor,
-                notation: ChessEngine.getMoveNotation(gameState, { from, to, promotion: pieceType })
+                notation: ChessEngine.getMoveNotation(newGameState, { from, to, promotion: pieceType })
             }]);
             setCurrentPlayer(botColor);
             setPromotionState(null);
+            clearSelection();
         } catch (error) {
             console.error("Lỗi trong handlePromotion:", error);
             setPromotionState(null);
@@ -228,11 +235,7 @@ const ChessGame = () => {
     };
 
     const resetGame = () => {
-        console.log("Khởi tạo ván mới...");
         const initialState = ChessEngine.getInitialState();
-        console.log("Trạng thái ban đầu:", initialState);
-
-        // Reset tất cả state về trạng thái ban đầu
         setGameState(initialState);
         setSelectedSquare(null);
         setValidMoves([]);
@@ -243,16 +246,10 @@ const ChessGame = () => {
         setShowGameOverDialog(false);
         setIsThinking(false);
 
-        // Đợi cho state được cập nhật hoàn toàn trước khi cho bot đi
         if (botColor === 'white') {
-            console.log("Bot là quân trắng, sẽ đi trước");
-            // Sử dụng requestAnimationFrame để đảm bảo state đã được cập nhật
             requestAnimationFrame(() => {
-                console.log("Bắt đầu lượt đi của bot...");
                 handleBotMove();
             });
-        } else {
-            console.log("Người chơi là quân trắng, đợi lượt đi");
         }
     };
 
@@ -262,6 +259,10 @@ const ChessGame = () => {
             return `Chiếu hết! ${winner} thắng!`;
         }
         return 'Hòa cờ! (Bế tắc)';
+    };
+
+    const handleColorSelect = (color) => {
+        navigate('/play-with-bot', { state: { playerColor: color } });
     };
 
     return (
