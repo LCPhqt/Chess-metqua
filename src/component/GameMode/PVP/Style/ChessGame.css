@@ -4,10 +4,6 @@
     margin: 0 auto;
     padding: 20px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-    color: #fff;
-    border-radius: 24px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
 }
 
 .game-header {
@@ -20,37 +16,32 @@
 }
 
 .game-header h1 {
-    color: #fff;
+    color: #ffffff;
     margin: 0;
     font-size: 2.5rem;
     font-weight: 600;
-    text-shadow: 0 4px 8px rgba(0,0,0,0.5);
-    letter-spacing: 2px;
-    font-style: italic;
-    transition: all 0.3s ease;
 }
 
 .back-home-btn {
-    background: linear-gradient(45deg, #2196F3, #1976D2);
+    background: #2563eb;
     color: white;
     border: none;
     padding: 10px 20px;
-    border-radius: 50px;
-    font-size: 1.1rem;
-    font-weight: 600;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 500;
     cursor: pointer;
     display: flex;
     align-items: center;
     gap: 8px;
     transition: all 0.2s ease;
     margin-right: 20px;
-    box-shadow: 0 5px 15px rgba(33, 150, 243, 0.2);
 }
 
 .back-home-btn:hover {
-    background: linear-gradient(45deg, #1976D2, #2196F3);
-    box-shadow: 0 5px 15px rgba(33, 150, 243, 0.4);
+    background: #1d4ed8;
     transform: translateY(-2px);
+    box-shadow: 0 0 15px rgba(37, 99, 235, 0.5);
 }
 
 .back-home-btn:active {
@@ -64,12 +55,13 @@
 }
 
 .reset-btn {
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
-    color: #fff;
-    border: 1px solid rgba(255,255,255,0.2);
+    -webkit-backdrop-filter: blur(10px);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
     padding: 12px 24px;
-    border-radius: 50px;
+    border-radius: 8px;
     font-size: 1rem;
     font-weight: 600;
     cursor: pointer;
@@ -77,9 +69,7 @@
 }
 
 .reset-btn:hover {
-    background: linear-gradient(45deg, #2196F3, #1976D2);
-    color: #fff;
-    box-shadow: 0 5px 15px rgba(33, 150, 243, 0.4);
+    background: rgba(255, 255, 255, 0.2);
     transform: translateY(-2px);
 }
 
@@ -103,11 +93,6 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
-    background: rgba(0,0,0,0.8);
-    border-radius: 20px;
-    padding: 24px;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.3);
-    border: 1px solid rgba(255,255,255,0.08);
 }
 
 /* Responsive design */
@@ -152,38 +137,30 @@
 }
 
 .game-over-dialog {
-    background-color: #222;
+    background-color: white;
     padding: 30px;
-    border-radius: 20px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
     text-align: center;
-    color: #fff;
-    border: 1px solid rgba(255,255,255,0.08);
 }
 
 .game-over-dialog h2 {
     margin: 0 0 20px 0;
-    color: #fff;
-    font-size: 2rem;
-    font-weight: 400;
-    text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    color: #333;
+    font-size: 24px;
 }
 
 .new-game-btn {
-    background: linear-gradient(45deg, #2196F3, #1976D2);
+    background-color: #4CAF50;
     color: white;
     border: none;
-    padding: 12px 32px;
-    border-radius: 50px;
-    font-size: 1.1rem;
-    font-weight: 600;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-size: 16px;
     cursor: pointer;
-    transition: all 0.3s ease;
-    margin-top: 1rem;
+    transition: background-color 0.2s;
 }
 
 .new-game-btn:hover {
-    background: linear-gradient(45deg, #1976D2, #2196F3);
-    box-shadow: 0 5px 15px rgba(33, 150, 243, 0.4);
-    transform: translateY(-2px);
+    background-color: #45a049;
 }

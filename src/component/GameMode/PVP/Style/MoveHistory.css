@@ -1,19 +1,15 @@
 .move-history {
-  background: rgba(0, 0, 0, 0.8);
-  border-radius: 16px;
-  padding: 1.5rem;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   margin-top: 1rem;
-  color: #fff;
-  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .move-history h3 {
   margin: 0 0 1rem 0;
-  color: #fff;
+  color: #333;
   font-size: 1.2rem;
-  font-weight: 500;
-  letter-spacing: 1px;
 }
 
 .moves-list {
@@ -24,36 +20,30 @@
 
 .no-moves {
   text-align: center;
-  color: #bbb;
+  color: #666;
   font-style: italic;
   padding: 1rem;
 }
 
 .moves-table {
   width: 100%;
-  color: #fff;
 }
 
 .move-row {
   display: flex;
   align-items: center;
   padding: 0.5rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  transition: background 0.2s;
+  border-bottom: 1px solid #eee;
 }
 
 .move-row:last-child {
   border-bottom: none;
 }
 
-.move-row:hover {
-  background: rgba(33, 150, 243, 0.08);
-}
-
 .move-number {
   min-width: 2.5rem;
-  color: #4caf50;
-  font-weight: 600;
+  color: #666;
+  font-weight: 500;
 }
 
 .move-notation {
@@ -62,18 +52,18 @@
   justify-content: space-between;
   align-items: center;
   padding: 0.25rem 0.5rem;
-  border-radius: 8px;
+  border-radius: 4px;
   transition: background-color 0.2s;
 }
 
 .player-move {
-  background: linear-gradient(45deg, #2196f3, #1976d2);
-  color: #fff;
+  background-color: #e8f5e9;
+  color: #2e7d32;
 }
 
 .bot-move {
-  background: linear-gradient(45deg, #f44336, #b71c1c);
-  color: #fff;
+  background-color: #fce4ec;
+  color: #c2185b;
 }
 
 .move-indicator {
@@ -82,14 +72,14 @@
 }
 
 .move-stats {
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 1px solid #eee;
   padding-top: 1rem;
   margin-top: 1rem;
 }
 
 .move-stats p {
   margin: 0.5rem 0;
-  color: #bbb;
+  color: #666;
   font-size: 0.9rem;
 }
 
@@ -99,15 +89,15 @@
 }
 
 .moves-list::-webkit-scrollbar-track {
-  background: #222;
+  background: #f1f1f1;
   border-radius: 4px;
 }
 
 .moves-list::-webkit-scrollbar-thumb {
-  background: #444;
+  background: #ccc;
   border-radius: 4px;
 }
 
 .moves-list::-webkit-scrollbar-thumb:hover {
-  background: #2196f3;
+  background: #999;
 }

@@ -1,13 +1,13 @@
 /* src/component/GameMode/ChessBoard.css */
 :root {
-    --primary-bg: #1a1a1a;
-    --board-light: #f5f5f5;
-    --board-dark: #222;
-    --text-color: #fff;
-    --highlight-color: #4CAF50;
-    --valid-move-color: rgba(76, 175, 80, 0.2);
-    --capture-move-color: rgba(244, 67, 54, 0.2);
-    --selected-color: rgba(33, 150, 243, 0.3);
+    --primary-bg: #1a2634;
+    --board-light: #ffe0b2;
+    --board-dark: #8b4513;
+    --text-color: #ffffff;
+    --highlight-color: rgba(76, 255, 0, 0.7);
+    --valid-move-color: rgba(0, 255, 0, 0.2);
+    --capture-move-color: rgba(255, 0, 0, 0.2);
+    --selected-color: rgba(0, 123, 255, 0.3);
     --check-color: rgba(255, 0, 0, 0.6);
     --overlay-bg: rgba(255, 255, 255, 0.2);
     --sidebar-bg: rgba(30, 41, 59, 0.8);
@@ -76,9 +76,9 @@ body {
     border: none;
     position: relative;
     background-color: transparent;
-    border-radius: 20px;
+    border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .board-row {
@@ -107,7 +107,7 @@ body {
 
 .square.selected {
     background-color: var(--selected-color) !important;
-    box-shadow: 0 0 0 3px #2196F3 inset;
+    box-shadow: inset 0 0 0 3px rgba(0, 123, 255, 0.5);
 }
 
 .square.valid-move::before {
@@ -132,7 +132,7 @@ body {
     position: absolute;
     width: 76px;
     height: 76px;
-    border: 2px solid #f44336;
+    border: 2px solid var(--highlight-color);
     border-radius: 50%;
     background-color: transparent;
 }
@@ -150,13 +150,11 @@ body {
     z-index: 3;
     position: relative;
     transition: transform 0.2s ease;
-    border-radius: 12px;
 }
 
 .piece:hover {
     transform: scale(1.1);
     cursor: pointer;
-    box-shadow: 0 0 12px #2196F3;
 }
 
 .square.selected .piece {
@@ -197,7 +195,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(255, 215, 0, 0.18);
+    background-color: rgba(255, 255, 0, 0.2);
     pointer-events: none;
 }
 
@@ -312,7 +310,6 @@ body {
     animation: checkPulse 1.5s infinite;
     background-color: var(--check-color) !important;
     position: relative;
-    border-radius: 12px;
 }
 
 .square.checked::after {
@@ -322,7 +319,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    border: 2px solid #f44336;
+    border: 2px solid rgba(255, 0, 0, 0.8);
     pointer-events: none;
 }
 

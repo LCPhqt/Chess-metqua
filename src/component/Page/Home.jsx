@@ -7,6 +7,9 @@ import { auth } from '../../FireBase/config';
 import { signOut } from 'firebase/auth';
 import { toast } from 'react-toastify';
 import ColorSelectionDialog from '../GameMode/PlayWithBot/ColorSelectionDialog';
+import new_pic from '../../assets/new_pic.png'; 
+import new_pic1 from '../../assets/new_pic1.png'; 
+
 
 const ChessHomepage = () => {
     const { user } = useUser();
@@ -42,6 +45,7 @@ const ChessHomepage = () => {
     };
 
     return (
+        <>
         <div className="chess-homepage">
             <div className="left-sidebar">
                 {/* Logo và tiêu đề */}
@@ -119,10 +123,36 @@ const ChessHomepage = () => {
                         </button>
                     </div>
                 </div>
-            </div>
+            </div>  
             <div className="main-content">
-                {/* Nội dung chính của trang */}
+                <div className="parent">
+                <h2 className='section-title'>
+                    News
+                </h2>   
+                <h1 className='section-card' id='1'></h1>
+                <h1 className='section-card' id='1'>
+                    Firouzja Defends Title, Wins 3rd Bullet Chess Championship
+                    <img src={new_pic} alt="new" width="500" className='image'/>
+                    </h1>
+                <h1 className='section-card' id='1'>
+                    Do You Know This Famous Pattern?
+                    <img src={new_pic1} alt="new" width="500" className='image'/>
+                    </h1>
+                 <h1 className='section-card' id='1'>
+                    Do You Know This Famous Pattern?
+                    <img src={new_pic1} alt="new" width="500" className='image'/>
+                    </h1>
+                 <h1 className='section-card' id='1'>
+                    Do You Know This Famous Pattern?
+                    <img src={new_pic1} alt="new" width="500" className='image'/>
+                    </h1>
+                 <h1 className='section-card' id='1'>
+                    Do You Know This Famous Pattern?
+                    <img src={new_pic1} alt="new" width="500" className='image'/>
+                    </h1>
+                    </div>
             </div>
+            
 
             {/* Modal thông tin người chơi */}
             {showPlayerInfo && (
@@ -162,13 +192,44 @@ const ChessHomepage = () => {
                         </div>
                     </div>
                 </div>
+                
             )}
+            
             <ColorSelectionDialog
                 isOpen={showColorSelection}
                 onSelect={handleColorSelect}
                 onClose={() => setShowColorSelection(false)}
             />
         </div>
+        <footer class="site-footer">
+  <div class="footer-links">
+    <a href="/support">Support</a>
+    <span class="separator">•</span>
+    <a href="/terms">Chess Terms</a>
+    <span class="separator">•</span>
+    <a href="/about">About</a>
+    <span class="separator">•</span>
+    <a href="/jobs">Jobs</a>
+    <span class="separator">•</span>
+    <a href="/developers">Developers</a>
+    <span class="separator">•</span>
+    <a href="/agreement">User Agreement</a>
+    <span class="separator">•</span>
+    <a href="/privacy">Privacy Policy</a>
+    <span class="separator">•</span>
+    <a href="/settings">Privacy Settings</a>
+    <span class="separator">•</span>
+    <a href="/fairplay">Fair Play</a>
+    <span class="separator">•</span>
+    <a href="/partners">Partners</a>
+    <span class="separator">•</span>
+    <a href="/compliance">Compliance</a>
+  </div>
+  <div class="footer-copyright">
+    <span>Chess.com © 2025</span>
+  </div>
+</footer>
+            </>
     );
 };
 
