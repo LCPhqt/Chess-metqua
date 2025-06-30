@@ -354,6 +354,7 @@ const ChessHomepage = () => {
                     <img src={new_pic} alt="new" width="500" className='image'/>
                     </a>
                     </h1>
+                    
                 <h1 className='section-card' id='1'>
                     Do You Know This Famous Pattern?
                     <a href="https://chess.com/news" target="_blank" rel="noopener noreferrer">
