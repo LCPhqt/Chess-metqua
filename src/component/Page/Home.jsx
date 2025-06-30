@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { User, Bot, Search, Settings, LogOut, Info, X } from 'lucide-react';
 import '../../Css/Page/Home.css';
@@ -16,6 +16,7 @@ const ChessHomepage = () => {
     const navigate = useNavigate();
     const [showPlayerInfo, setShowPlayerInfo] = useState(false);
     const [showColorSelection, setShowColorSelection] = useState(false);
+    const [botHistory, setBotHistory] = useState([]);
 
     const handleBotMode = () => {
         setShowColorSelection(true);
@@ -43,6 +44,11 @@ const ChessHomepage = () => {
     const handleClosePlayerInfo = () => {
         setShowPlayerInfo(false);
     };
+
+    useEffect(() => {
+    const history = JSON.parse(localStorage.getItem('botHistory') || '[]');
+    setBotHistory(history.reverse());
+}, []);
 
     return (
         <>
@@ -201,6 +207,21 @@ const ChessHomepage = () => {
                 onClose={() => setShowColorSelection(false)}
             />
         </div>
+
+        <h2 className='section-title'>News</h2>
+            {/* ...news cards... */}
+            <div className="section-card">
+                <h3>Lịch sử đấu với máy</h3>
+                {botHistory.length === 0 && <p>Chưa có ván nào.</p>}
+                <ul>
+                  {botHistory.map((game, idx) => (
+                    <li key={idx}>
+                      {game.date} - {game.playerColor} - {game.result}
+                    </li>
+                  ))}
+                </ul>
+            </div>
+            
         <footer class="site-footer">
   <div class="footer-links">
     <a href="/support">Support</a>

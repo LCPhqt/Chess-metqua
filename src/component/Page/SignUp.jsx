@@ -180,10 +180,13 @@ function SignUpForm({ onSwitchToLogin }) {
             {/* Background elements */}
             <div className="signup-background-pattern"></div>
             <div className="signup-background-overlay"></div>
-
-            <div className="signup-content">
-                <h1 className="signup-title">Tham Gia Chess Play</h1>
-
+        
+            <div className="signup-content">    
+                <h1 className="signup-title">
+                    <span>Tham Gia Chess Play</span>
+                    <img src="https://img.icons8.com/?size=100&id=vWVrEKSUg8dF&format=png&color=000000" alt="" className='image' />
+                </h1>
+                
                 <div className="signup-form-container">
                     {/* Form đăng ký */}
                     <form onSubmit={handleSubmit}>

@@ -110,7 +110,13 @@ function LoginForm({ onSwitchToSignUp }) {
 
         <div className="login-content">
           {/* Tiêu đề */}
-          <h1 className="login-title">Chess Play</h1>
+          <div className="login-content_title">
+            <h1 className="login-title">
+            CHESS 
+        
+          </h1>
+          <img src="https://img.icons8.com/?size=100&id=WQV0m5UDUsBg&format=png&color=000000" alt="" />
+          </div>
 
           {loginSuccess && (
             <div className="login-success-message">
