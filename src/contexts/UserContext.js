@@ -9,21 +9,31 @@ export const UserProvider = ({ children }) => {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
 
+    const fetchUserData = async (firebaseUser) => {
+        try {
+            const userDoc = await getDoc(doc(db, "users", firebaseUser.uid));
+            if (userDoc.exists()) {
+                setUser({
+                    uid: firebaseUser.uid,
+                    email: firebaseUser.email,
+                    ...userDoc.data()
+                });
+            }
+        } catch (error) {
+            console.error("Error fetching user data:", error);
+        }
+    };
+
+    const refreshUser = async () => {
+        if (auth.currentUser) {
+            await fetchUserData(auth.currentUser);
+        }
+    };
+
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, async (firebaseUser) => {
             if (firebaseUser) {
-                try {
-                    const userDoc = await getDoc(doc(db, "users", firebaseUser.uid));
-                    if (userDoc.exists()) {
-                        setUser({
-                            uid: firebaseUser.uid,
-                            email: firebaseUser.email,
-                            ...userDoc.data()
-                        });
-                    }
-                } catch (error) {
-                    console.error("Error fetching user data:", error);
-                }
+                await fetchUserData(firebaseUser);
             } else {
                 setUser(null);
             }
@@ -34,7 +44,7 @@ export const UserProvider = ({ children }) => {
     }, []);
 
     return (
-        <UserContext.Provider value={{ user, loading }}>
+        <UserContext.Provider value={{ user, loading, refreshUser }}>
             {!loading && children}
         </UserContext.Provider>
     );

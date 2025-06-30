@@ -133,7 +133,7 @@ body {
     position: absolute;
     width: 65px;
     height: 65px;
-    border: 7px solid var(--highlight);
+    border: 7px solid var(--highlight-color);
     border-radius: 50%;
     background-color: transparent;
 }
