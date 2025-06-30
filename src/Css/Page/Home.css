@@ -610,7 +610,16 @@
 .form-input[type='date']::placeholder {
     color: #9ca3af;
 }
-
+.image{
+    display: block;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    /* hoặc margin: 0 auto; */
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
 /* Responsive Design */
 @media (max-width: 640px) {
     .chess-homepage {

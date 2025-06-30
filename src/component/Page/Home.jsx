@@ -266,14 +266,6 @@ const ChessHomepage = () => {
                         <h3 className="user-name">{user?.fullName || 'vinh'}</h3>
                         <p className="user-email">{user?.email || 'ph12@gmail.com'}</p>
                     </div>
-                    <div className="rating-info">
-                        <p className="rating-text">Rating: {user?.rating || '1200'}</p>
-                        <div className="progress-bar">
-                            <div className="progress-fill"></div>
-                        </div>
-
-                    </div>
-                    
                 </div>
 
                 {/* Chế độ chơi */}
@@ -362,15 +354,11 @@ const ChessHomepage = () => {
                     </h1>
                 <h1 className='section-card' id='1'>
                     Do You Know This Famous Pattern?
-                    <img src={new_pic1} alt="new" width="500" className='image'/>
+                    <img src={"https://images.chesscomfiles.com/uploads/v1/news/1698742.b852491a.507x286o.b53f3aa8e640@2x.png"} alt="new" width="500" className='image'/>
                     </h1>
                  <h1 className='section-card' id='1'>
-                    Do You Know This Famous Pattern?
-                    <img src={new_pic1} alt="new" width="500" className='image'/>
-                    </h1>
-                 <h1 className='section-card' id='1'>
-                    Do You Know This Famous Pattern?
-                    <img src={new_pic1} alt="new" width="500" className='image'/>
+                   Rare Fourth Moves
+                    <img src={"https://images.chesscomfiles.com/uploads/v1/video/9851.202e2ac5.507x286o.8bdc6c84f09d@2x.png"} alt="new" width="500" className='image'/>
                     </h1>
                  <h1 className='section-card' id='1'>
                     Do You Know This Famous Pattern?
