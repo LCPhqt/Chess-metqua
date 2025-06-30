@@ -130,9 +130,9 @@ body {
 .square.valid-move.can-capture::before {
     content: '';
     position: absolute;
-    width: 76px;
-    height: 76px;
-    border: 2px solid #f44336;
+    width: 65px;
+    height: 65px;
+    border: 7px solid var(--highlight-color);
     border-radius: 50%;
     background-color: transparent;
 }

@@ -471,6 +471,110 @@
 
 .cancel-button svg {
     color: #9ca3af;
+    font-size: 0.875rem;
+}
+
+.form-input {
+    padding: 0.75rem;
+    border: 1px solid #374151;
+    border-radius: 0.5rem;
+    background-color: #111827;
+    color: #f3f4f6;
+    font-size: 0.875rem;
+    transition: all 0.15s ease;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: #60a5fa;
+    box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.1);
+}
+
+.form-input.disabled {
+    background-color: #374151;
+    color: #9ca3af;
+    cursor: not-allowed;
+}
+
+.form-input select {
+    background-color: #111827;
+    color: #f3f4f6;
+    border: 1px solid #374151;
+    border-radius: 0.5rem;
+    padding: 0.75rem;
+    font-size: 0.875rem;
+    transition: all 0.15s ease;
+    cursor: pointer;
+}
+
+.form-input select:focus {
+    outline: none;
+    border-color: #60a5fa;
+    box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.1);
+}
+
+.form-input select option {
+    background-color: #1f2937;
+    color: #f3f4f6;
+    padding: 0.5rem;
+}
+
+.readonly-field {
+    padding: 0.75rem;
+    background-color: #374151;
+    border-radius: 0.5rem;
+    color: #9ca3af;
+    font-size: 0.875rem;
+    border: 1px solid #4b5563;
+}
+
+.form-actions {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #374151;
+}
+
+.action-button {
+    flex: 1;
+    padding: 0.75rem 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.save-button {
+    background-color: #059669;
+    color: white;
+}
+
+.save-button:hover {
+    background-color: #047857;
+    box-shadow: 0 0 15px rgba(5, 150, 105, 0.5);
+    transform: translateY(-1px);
+}
+
+.cancel-button {
+    background-color: #374151;
+    color: #f3f4f6;
+}
+
+.cancel-button:hover {
+    background-color: #4b5563;
+    box-shadow: 0 0 15px rgba(55, 65, 81, 0.5);
+    transform: translateY(-1px);
+}
+
+.cancel-button svg {
+    color: #9ca3af;
 }
 
 .form-input[type='date'] {
@@ -513,36 +617,29 @@
         flex-direction: column;
         padding: 0.5rem;
     }
-
     .left-sidebar {
         width: 100%;
         padding-right: 0;
     }
-
     .main-content {
         padding-left: 0;
         padding-top: 1rem;
         border-radius: 5px;
     }
-}
-.image{
-    border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-    margin-top: 12px;
-    max-width: 100%;
-    height: auto;
-    position: center;
-     display: block;
-    margin: 16px auto 0 auto;
-}
-@media (max-width: 768px) {
-  .footer-links {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  
-  .footer-links a, .separator {
-    margin: 5px 3px;
-  }
+    .modal-content {
+        width: 95%;
+        margin: 1rem;
+    }
+    .form-actions {
+        flex-direction: column;
+    }
+    .player-info-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.25rem;
+    }
+    .player-info-item span {
+        margin-left: 0;
+        text-align: left;
+    }
 }
