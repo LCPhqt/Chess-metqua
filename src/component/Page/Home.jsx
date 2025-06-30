@@ -350,19 +350,27 @@ const ChessHomepage = () => {
                 
                 <h1 className='section-card' id='1'>
                     Firouzja Defends Title, Wins 3rd Bullet Chess Championship
+                    < a href="https://chess.com/news" target="_blank" rel="noopener noreferrer">
                     <img src={new_pic} alt="new" width="500" className='image'/>
+                    </a>
                     </h1>
                 <h1 className='section-card' id='1'>
                     Do You Know This Famous Pattern?
+                    <a href="https://chess.com/news" target="_blank" rel="noopener noreferrer">
                     <img src={"https://images.chesscomfiles.com/uploads/v1/news/1698742.b852491a.507x286o.b53f3aa8e640@2x.png"} alt="new" width="500" className='image'/>
+                    </a>
                     </h1>
                  <h1 className='section-card' id='1'>
                    Rare Fourth Moves
+                   <a href="https://chess.com/news" target="_blank" rel="noopener noreferrer">
                     <img src={"https://images.chesscomfiles.com/uploads/v1/video/9851.202e2ac5.507x286o.8bdc6c84f09d@2x.png"} alt="new" width="500" className='image'/>
+                    </a>
                     </h1>
                  <h1 className='section-card' id='1'>
                     Do You Know This Famous Pattern?
+                    < a href="https://chess.com/news" target="_blank" rel="noopener noreferrer">
                     <img src={new_pic1} alt="new" width="500" className='image'/>
+                    </a>
                     </h1>
                     </div>
             </div>
