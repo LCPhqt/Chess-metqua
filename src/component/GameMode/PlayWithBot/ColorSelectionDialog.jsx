@@ -1,11 +1,14 @@
 import React from 'react';
 import './Style/ColorSelectionDialog.css';
+import { useNavigate } from 'react-router-dom';
 
 const ColorSelectionDialog = ({ isOpen, onSelect, onClose }) => {
+    const navigate = useNavigate();
+
     if (!isOpen) return null;
 
     const handleColorSelect = (color) => {
-        onSelect(color);
+        navigate('/play-with-bot', { state: { playerColor: color } });
         onClose();
     };
 

@@ -115,7 +115,7 @@ body {
     position: absolute;
     width: 20px;
     height: 20px;
-    background-color: var(--highlight-color);
+    background-color: var(--highlight);
     border-radius: 50%;
     opacity: 0.8;
     pointer-events: none;
@@ -328,4 +328,18 @@ body {
 
 .square.checked .piece {
     transform: scale(1.1);
+}
+
+.capture-dot {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 60%;
+    height: 60%;
+    transform: translate(-50%, -50%);
+    border: 3px solid #ff3333;
+    border-radius: 50%;
+    background: rgba(255, 0, 0, 0.15);
+    z-index: 5;
+    pointer-events: none;
 }

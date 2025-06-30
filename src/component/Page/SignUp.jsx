@@ -13,8 +13,7 @@ import { createUserWithEmailAndPassword } from 'firebase/auth';
 function SignUpForm({ onSwitchToLogin }) {
     // Khởi tạo state cho dữ liệu form
     const [formData, setFormData] = useState({
-        fullName: '',        // Họ tên người dùng
-        username: '',        // Tên đăng nhập
+        fullName: '',        // Họ tên người dùng 
         email: '',          // Email
         password: '',       // Mật khẩu
         confirmPassword: '' // Xác nhận mật khẩu
@@ -54,11 +53,6 @@ function SignUpForm({ onSwitchToLogin }) {
         // Kiểm tra họ tên
         if (!formData.fullName.trim()) {
             newErrors.fullName = 'Họ tên không được để trống';
-        }
-
-        // Kiểm tra tên đăng nhập
-        if (!formData.username.trim()) {
-            newErrors.username = 'Tên đăng nhập không được để trống';
         }
 
         // Kiểm tra email
@@ -115,7 +109,6 @@ function SignUpForm({ onSwitchToLogin }) {
                 try {
                     const userData = {
                         fullName: formData.fullName,
-                        username: formData.username,
                         email: formData.email,
                         password: formData.password,
                         createdAt: new Date()
@@ -200,18 +193,6 @@ function SignUpForm({ onSwitchToLogin }) {
                                 className={`signup-input-field ${errors.fullName ? 'signup-input-field-error' : ''}`}
                             />
                             {errors.fullName && <span className="signup-error-message">{errors.fullName}</span>}
-                        </div>
-
-                        {/* Input tên đăng nhập */}
-                        <div className="signup-input-group">
-                            <input
-                                type="text"
-                                placeholder="Tên đăng nhập"
-                                value={formData.username}
-                                onChange={(e) => handleInputChange('username', e.target.value)}
-                                className={`signup-input-field ${errors.username ? 'signup-input-field-error' : ''}`}
-                            />
-                            {errors.username && <span className="signup-error-message">{errors.username}</span>}
                         </div>
 
                         {/* Input email */}
