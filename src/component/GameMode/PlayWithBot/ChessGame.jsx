@@ -12,7 +12,13 @@ import './Style/ChessGame.css';
 const ChessGame = () => {
     const navigate = useNavigate();
     const location = useLocation();
-    const playerColor = location.state?.playerColor || 'white';
+    const [playerColor, setPlayerColor] = useState(() => {
+        const color = location.state?.playerColor || 'white';
+        if (color === 'random') {
+            return Math.random() < 0.5 ? 'white' : 'black';
+        }
+        return color;
+    });
     const botColor = playerColor === 'white' ? 'black' : 'white';
     const [gameState, setGameState] = useState(() => ChessEngine.getInitialState());
     const [selectedSquare, setSelectedSquare] = useState(null);
