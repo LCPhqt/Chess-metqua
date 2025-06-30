@@ -63,16 +63,10 @@ const ChessHomepage = () => {
                 {/* Thông tin người dùng */}
                 <div className="section-card user-section">
                     <div className="user-info">
-                        <h3 className="user-name">{user?.fullName || 'vinh'}</h3>
-                        <p className="user-email">{user?.email || 'ph12@gmail.com'}</p>
+                        <h3 className="user-name"> Xin chào {user?.fullName }</h3>
+                        <p className="user-email">{user?.email }</p>
                     </div>
-                    <div className="rating-info">
-                        <p className="rating-text">Rating: {user?.rating || '1200'}</p>
-                        <div className="progress-bar">
-                            <div className="progress-fill"></div>
-                        </div>
-                        <p className="level-text">Cấp độ: {user?.level || 'Trung cấp'}</p>
-                    </div>
+                    
                 </div>
 
                 {/* Chế độ chơi */}
@@ -129,13 +123,32 @@ const ChessHomepage = () => {
                         </button>
                     </div>
                 </div>
+                
+            {/* Lịch sử đấu với máy*/}
+            <div className="section-card">
+                <h3>Lịch sử đấu </h3>
+                {botHistory.length === 0 && <p>Chưa có ván nào.</p>}
+                <ul>
+                  {botHistory.map((game, idx) => (
+                    <li key={idx}>
+                      {game.date} - {game.playerColor} - {game.result}
+                    </li>
+                  ))}
+                </ul>
+            </div>
+            <div className="section-card">
+
+                </div>
             </div>  
+            {/* News */}
             <div className="main-content">
                 <div className="parent">
                 <h2 className='section-title'>
-                    News
+                    NEWS
                 </h2>   
                 <h1 className='section-card' id='1'></h1>
+                
+                
                 <h1 className='section-card' id='1'>
                     Firouzja Defends Title, Wins 3rd Bullet Chess Championship
                     <img src={new_pic} alt="new" width="500" className='image'/>
@@ -208,19 +221,7 @@ const ChessHomepage = () => {
             />
         </div>
 
-        <h2 className='section-title'>News</h2>
-            {/* ...news cards... */}
-            <div className="section-card">
-                <h3>Lịch sử đấu với máy</h3>
-                {botHistory.length === 0 && <p>Chưa có ván nào.</p>}
-                <ul>
-                  {botHistory.map((game, idx) => (
-                    <li key={idx}>
-                      {game.date} - {game.playerColor} - {game.result}
-                    </li>
-                  ))}
-                </ul>
-            </div>
+        
             
         <footer class="site-footer">
   <div class="footer-links">
