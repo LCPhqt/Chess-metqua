@@ -1,0 +1,189 @@
+/* src/component/GameMode/ChessGame.css */
+.chess-game {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    color: #fff;
+    border-radius: 24px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}
+
+.game-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.game-header h1 {
+    color: #fff;
+    margin: 0;
+    font-size: 2.5rem;
+    font-weight: 600;
+    text-shadow: 0 4px 8px rgba(0,0,0,0.5);
+    letter-spacing: 2px;
+    font-style: italic;
+    transition: all 0.3s ease;
+}
+
+.back-home-btn {
+    background: linear-gradient(45deg, #2196F3, #1976D2);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s ease;
+    margin-right: 20px;
+    box-shadow: 0 5px 15px rgba(33, 150, 243, 0.2);
+}
+
+.back-home-btn:hover {
+    background: linear-gradient(45deg, #1976D2, #2196F3);
+    box-shadow: 0 5px 15px rgba(33, 150, 243, 0.4);
+    transform: translateY(-2px);
+}
+
+.back-home-btn:active {
+    transform: translateY(0);
+}
+
+.game-header-content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.reset-btn {
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.2);
+    padding: 12px 24px;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.reset-btn:hover {
+    background: linear-gradient(45deg, #2196F3, #1976D2);
+    color: #fff;
+    box-shadow: 0 5px 15px rgba(33, 150, 243, 0.4);
+    transform: translateY(-2px);
+}
+
+.reset-btn:active {
+    transform: translateY(0);
+}
+
+.game-content {
+    display: grid;
+    grid-template-columns: 1fr 400px;
+    gap: 30px;
+    align-items: start;
+}
+
+.chess-board-container {
+    display: flex;
+    justify-content: center;
+}
+
+.game-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background: rgba(0,0,0,0.8);
+    border-radius: 20px;
+    padding: 24px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+    border: 1px solid rgba(255,255,255,0.08);
+}
+
+/* Responsive design */
+@media (max-width: 1024px) {
+    .game-content {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .game-sidebar {
+        order: -1;
+    }
+}
+
+@media (max-width: 768px) {
+    .chess-game {
+        padding: 10px;
+    }
+
+    .game-header {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    .game-header h1 {
+        font-size: 2rem;
+    }
+}
+
+.game-over-dialog-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+.game-over-dialog {
+    background-color: #222;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+    text-align: center;
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.08);
+}
+
+.game-over-dialog h2 {
+    margin: 0 0 20px 0;
+    color: #fff;
+    font-size: 2rem;
+    font-weight: 400;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+.new-game-btn {
+    background: linear-gradient(45deg, #2196F3, #1976D2);
+    color: white;
+    border: none;
+    padding: 12px 32px;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+}
+
+.new-game-btn:hover {
+    background: linear-gradient(45deg, #1976D2, #2196F3);
+    box-shadow: 0 5px 15px rgba(33, 150, 243, 0.4);
+    transform: translateY(-2px);
+}

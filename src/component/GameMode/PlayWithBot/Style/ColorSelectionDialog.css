@@ -1,0 +1,115 @@
+.color-selection-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.color-selection-dialog {
+    background: rgba(0, 0, 0, 0.92);
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    max-width: 400px;
+    width: 90%;
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.color-selection-dialog h3 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+.color-options {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.color-button {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    border: 2px solid #2196f3;
+    border-radius: 12px;
+    background: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1.1rem;
+    color: #fff;
+    font-weight: 500;
+}
+
+.color-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 8px #2196f3;
+    background: linear-gradient(45deg, #2196f3, #1976d2);
+    color: #fff;
+}
+
+.white-button {
+    background-color: #fff;
+    color: #222;
+}
+
+.white-button:hover {
+    background: linear-gradient(45deg, #e3f2fd, #fff);
+    border-color: #2196f3;
+    color: #1976d2;
+}
+
+.black-button {
+    background-color: #222;
+    color: #fff;
+}
+
+.black-button:hover {
+    background: linear-gradient(45deg, #222, #1976d2);
+    border-color: #2196f3;
+    color: #fff;
+}
+
+.random-button {
+    background: linear-gradient(45deg, #fff 50%, #222 50%);
+    color: #2196f3;
+}
+
+.random-button:hover {
+    background: linear-gradient(45deg, #e3f2fd 50%, #1976d2 50%);
+    border-color: #2196f3;
+    color: #fff;
+}
+
+.piece-preview {
+    font-size: 2rem;
+    margin-right: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+}
+
+.white-piece {
+    color: #1976d2;
+}
+
+.black-piece {
+    color: #fff;
+}
+
+.random-button .piece-preview {
+    background: none;
+    color: #2196f3;
+}
