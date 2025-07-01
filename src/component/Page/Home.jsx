@@ -9,8 +9,8 @@ import { doc, updateDoc } from 'firebase/firestore';
 import { toast } from 'react-toastify';
 import ColorSelectionDialog from '../GameMode/PlayWithBot/ColorSelectionDialog';
 import new_pic from '../../assets/new_pic.png'; 
-import new_pic1 from '../../assets/new_pic1.png'; 
-
+import new_pic1 from '../../assets/new_pic1.png';
+import { v4 as uuidv4 } from 'uuid';
 
 
 const ChessHomepage = () => {
@@ -114,6 +114,11 @@ const ChessHomepage = () => {
         }
     };
 
+    // Thêm hàm này để điều hướng khi bấm "Chơi với bạn"
+    const handlePlayWithFriend = () => {
+        const roomId = uuidv4();
+        navigate(`/play-with-friend/${roomId}`);
+    };
     const handleShowPlayerInfo = () => {
         setShowPlayerInfo(true);
 
@@ -245,6 +250,7 @@ const ChessHomepage = () => {
             toast.error('Có lỗi xảy ra khi cập nhật thông tin');
         }
     };
+
     {/*ham lay lich su tran dau voi bot*/}
     useEffect(() => {
     const history = JSON.parse(localStorage.getItem('botHistory') || '[]');
@@ -272,12 +278,12 @@ const ChessHomepage = () => {
                 </div>
 
                 {/* Chế độ chơi */}
-                <div className="section-card">
-                    <h3 className="section-title">Chế độ chơi</h3>
-                    <div className="game-modes">
-                        <button className="mode-button">
-                            <div className="mode-icon friend-icon">
-                                <User size={20} />
+              <div className="section-card">
+    <h3 className="section-title">Chế độ chơi</h3>
+    <div className="game-modes">
+        <button className="mode-button" onClick={handlePlayWithFriend}>
+            <div className="mode-icon friend-icon">
+                <User size={20} />
                             </div>
                             <div className="mode-content">
                                 <div className="mode-title">Chơi với bạn</div>
