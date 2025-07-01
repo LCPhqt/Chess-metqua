@@ -5,6 +5,7 @@
     --board-dark: #222;
     --text-color: #fff;
     --highlight-color: #4CAF50;
+    --highlight-color-2: #3a443b;
     --valid-move-color: rgba(76, 175, 80, 0.2);
     --capture-move-color: rgba(244, 67, 54, 0.2);
     --selected-color: rgba(33, 150, 243, 0.3);
@@ -78,7 +79,7 @@ body {
     background-color: transparent;
     border-radius: 20px;
     overflow: hidden;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
 }
 
 .board-row {
@@ -98,7 +99,7 @@ body {
 }
 
 .square.light {
-     background-color: #458920;
+    background-color: #458920;
 }
 
 .square.dark {
@@ -115,7 +116,7 @@ body {
     position: absolute;
     width: 20px;
     height: 20px;
-    background-color: var(--highlight);
+    background-color: var(--highlight-color-2);
     border-radius: 50%;
     opacity: 0.8;
     pointer-events: none;
@@ -181,9 +182,6 @@ body {
     }
 }
 
-.square.valid-move::before {
-    animation: pulse 1.5s infinite;
-}
 
 /* Highlight last move */
 .square.last-move {
