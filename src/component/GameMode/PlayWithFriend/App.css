@@ -11,6 +11,7 @@
     background: radial-gradient(circle at 30% 70%, rgba(72, 11, 11, 0.492) 0%, transparent 50%),
         radial-gradient(circle at 70% 30%, rgba(208, 71, 71, 0.248) 0%, transparent 50%);
 }
+
 .user-form {
     margin-top: 30px !important;
     max-width: 800px;
@@ -20,20 +21,24 @@
 .home {
     min-height: 100vh;
 }
+
 .home-columns {
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
 .pointer {
     cursor: pointer;
 }
+
 .share-game {
     position: absolute;
     width: 500px;
     bottom: 0;
     left: 0;
 }
+
 .board-container {
     width: 600px;
     height: 600px;
