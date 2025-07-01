@@ -95,7 +95,7 @@ export async function initGame(gameRefFb) {
 }
 
 // Export các hàm để các file khác import được
-export async function resetGame() {
+export async function   resetGame() {
   if (gameRef) {
     await updateGame(null, true);
     chess.reset();

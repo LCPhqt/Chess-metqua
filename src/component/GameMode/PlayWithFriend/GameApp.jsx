@@ -97,6 +97,12 @@ function GameApp() {
           <button className="button-is-primary" onClick={handledisplaylink}>
             COPY
           </button>
+          <div class='button-flex'>
+          <button className="back-home-btn" onClick={() => navigate('/home')}>
+                        ← Quay lại
+                    </button>
+             
+            </div>            
         </div>
       )}
       </div>
