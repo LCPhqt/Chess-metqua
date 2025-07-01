@@ -11,40 +11,25 @@
     "antd": "^5.25.2",
     "axios": "^1.9.0",
     "body-parser": "^2.2.0",
-<<<<<<< HEAD
     "chess.js": "^1.4.0",
     "cors": "^2.8.5",
     "date-fns": "^4.1.0",
     "express": "^5.1.0",
     "firebase": "^11.10.0",
-=======
-    "chess.js": "^1.2.0",
-    "cors": "^2.8.5",
-    "date-fns": "^4.1.0",
-    "express": "^5.1.0",
-    "firebase": "^11.8.1",
->>>>>>> cb05c10ef5bbf1cd54ac8c95329ef0120edb8f95
     "firebase-admin": "^13.4.0",
     "lodash": "^4.17.21",
     "lucide-react": "^0.511.0",
     "react": "^18.3.1",
-<<<<<<< HEAD
     "react-dnd": "^16.0.1",
     "react-dnd-html5-backend": "^16.0.1",
-=======
->>>>>>> cb05c10ef5bbf1cd54ac8c95329ef0120edb8f95
     "react-dom": "^18.3.1",
     "react-firebase-hooks": "^5.1.1",
     "react-router-dom": "^7.6.1",
     "react-scripts": "^5.0.1",
     "react-toastify": "^11.0.5",
-<<<<<<< HEAD
     "rxfire": "^6.1.0",
     "rxjs": "^7.8.2",
     "uuid": "^11.1.0",
-=======
-    "rxjs": "^7.8.2",
->>>>>>> cb05c10ef5bbf1cd54ac8c95329ef0120edb8f95
     "web-vitals": "^2.1.4",
     "yarn": "^1.22.22"
   },

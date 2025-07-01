@@ -35,7 +35,6 @@ const pieceImages = {
 const ChessBoard = ({ gameState, selectedSquare, validMoves, onSquareClick, isThinking, playerColor }) => {
     // Kiểm tra xem một ô có phải là nước đi hợp lệ không
     const isValidMove = (row, col) => {
-        return validMoves && validMoves.some(move => move.row === row && move.col === col);
         return validMoves.some(move => move.row === row && move.col === col);
     };
 

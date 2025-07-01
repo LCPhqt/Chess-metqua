@@ -86,11 +86,9 @@
     padding: 1rem 1.5rem;
     background: rgba(255, 255, 255, 0.1);
     border: 2px solid rgba(255, 255, 255, 0.2);
-<<<<<<< HEAD
-    border-radius: 50px;
-=======
+
     border-radius: 24px;
->>>>>>> cb05c10ef5bbf1cd54ac8c95329ef0120edb8f95
+
     color: #fff;
     font-size: 1rem;
     font-style: italic;
@@ -105,11 +103,10 @@
 }
 
 .signup-input-field:focus {
-<<<<<<< HEAD
-    border-color: #4CAF50;
-=======
+
+
     border-color: #998f35;
->>>>>>> cb05c10ef5bbf1cd54ac8c95329ef0120edb8f95
+
 }
 
 .signup-input-field-error {
@@ -118,11 +115,10 @@
 }
 
 .signup-success-message {
-<<<<<<< HEAD
-    background-color: #4CAF50;
-=======
+
+
     background-color: #8d3129;
->>>>>>> cb05c10ef5bbf1cd54ac8c95329ef0120edb8f95
+
     color: white;
     padding: 10px;
     border-radius: 4px;
@@ -160,11 +156,10 @@
 
 .signup-primary-btn:hover {
     background: linear-gradient(45deg, #3A0519, #670D2F);
-<<<<<<< HEAD
-    box-shadow: 0 5px 15px rgba(33, 150, 243, 0.4);
-=======
+
+
     box-shadow: 0 5px 15px rgba(140, 77, 22, 0.4);
->>>>>>> cb05c10ef5bbf1cd54ac8c95329ef0120edb8f95
+
     transform: translateY(-2px);
 }
 
@@ -196,11 +191,10 @@
     width: 100%;
     padding: 1rem 1.5rem;
     border: none;
-<<<<<<< HEAD
-    border-radius: 50px;
-=======
+
+
     border-radius: 24px;
->>>>>>> cb05c10ef5bbf1cd54ac8c95329ef0120edb8f95
+
     color: white;
     font-size: 1rem;
     font-weight: 500;
@@ -221,11 +215,10 @@
 
 .signup-google-btn:hover {
    background: linear-gradient(45deg, #EF88AD, #A53860);
-<<<<<<< HEAD
-    box-shadow: 0 5px 15px rgba(66, 133, 244, 0.4);
-=======
+
+
     box-shadow: 0 5px 15px rgba(171, 89, 34, 0.4);
->>>>>>> cb05c10ef5bbf1cd54ac8c95329ef0120edb8f95
+
     transform: translateY(-2px);
 }
 
@@ -256,11 +249,9 @@
 .signup-link-btn {
     background: none;
     border: none;
-<<<<<<< HEAD
-    color: #4CAF50;
-=======
+
     color: #cb5d19;
->>>>>>> cb05c10ef5bbf1cd54ac8c95329ef0120edb8f95
+
     font-size: 1rem;
     cursor: pointer;
     text-decoration: underline;
@@ -269,10 +260,7 @@
 }
 
 .signup-link-btn:hover {
-<<<<<<< HEAD
-    color: #66BB6A;
-=======
+
     color: #7c192f;
->>>>>>> cb05c10ef5bbf1cd54ac8c95329ef0120edb8f95
     text-shadow: 0 0 10px rgba(76, 175, 80, 0.5);
 }
