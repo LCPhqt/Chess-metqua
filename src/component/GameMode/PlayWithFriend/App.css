@@ -183,6 +183,16 @@ strong{
     margin-top:10px;
     box-shadow: 0 2px 4px rgba(78, 31, 31, 0.1);
 }
+.border{
+    background: radial-gradient(circle at 30% 70%, rgba(72, 11, 11, 0.492) 0%, transparent 50%),
+        radial-gradient(circle at 70% 30%, rgba(208, 71, 71, 0.248) 0%, transparent 50%);
+    
+    border-radius: 0.75rem;
+    padding: 2rem;
+    
+    margin-bottom: 1rem;
+    border: 1px solid #374151;
+}
 
 
 

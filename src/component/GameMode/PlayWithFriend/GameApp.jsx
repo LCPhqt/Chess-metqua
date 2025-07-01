@@ -71,6 +71,7 @@ function GameApp() {
 
   return (
     <div className="app-container">
+      
       {isGameOver && (
         <h2 className="vertical-text">
           GAME OVER
@@ -80,16 +81,17 @@ function GameApp() {
         </h2>
         
       )}
-
-      <div className="board-container">
+      <div className="border">
+       <div className="board-container">
         {game.oponent?.name && <span className="tag is-link">{game.oponent.name}</span>}
         <Board board={board} position={position} />
         {game.member?.name && <span className="tag is-link">{game.member.name}</span>}
-      </div>
-
+       </div>
+        
       {result && <p className="vertical-text">{result}</p>}
-
+      </div>
       {status === 'waiting' && (
+        
         <div className="section-card">
           <strong>COPY VÀ SHARE ĐỂ CHƠI ONLINE</strong>
           <button className="button-is-primary" onClick={handledisplaylink}>
@@ -97,7 +99,8 @@ function GameApp() {
           </button>
         </div>
       )}
-    </div>
+      </div>
+   
   );
 }
 
