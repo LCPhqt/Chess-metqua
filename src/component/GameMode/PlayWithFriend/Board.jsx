@@ -31,9 +31,10 @@ export default function Board({ board, position }) {
     return `${letter}${y + 1}`
   }
   return (
+    <div className='board-border'>
     <div className="board">
       {currBoard.map((piece, i) => (
-        <div key={i} className="square">
+        <div key={i} className="PFsquare">
           <BoardSquare
             piece={piece}
             black={isBlack(i)}
@@ -41,6 +42,7 @@ export default function Board({ board, position }) {
           />
         </div>
       ))}
+    </div>
     </div>
   )
 }

@@ -8,7 +8,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgb(34, 34, 34);
+    background: radial-gradient(circle at 30% 70%, rgba(72, 11, 11, 0.492) 0%, transparent 50%),
+        radial-gradient(circle at 70% 30%, rgba(208, 71, 71, 0.248) 0%, transparent 50%);
 }
 .user-form {
     margin-top: 30px !important;
@@ -36,6 +37,52 @@
 .board-container {
     width: 600px;
     height: 600px;
+    border-radius: 10%;
+    
+}
+.input{
+    width: 30%;
+    height: 30%;
+    border-radius: 10px;
+    padding: 0 20px;
+    font-size: 16px;
+    outline: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-bottom: 50%;
+    animation: alternate 2s infinite;
+}
+.link-share {
+    display: flex;
+    padding: 15px 25px;
+    background-color: #4CAF50;
+    color: rgb(12, 37, 3);
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    margin-left: 80px;
+    margin-bottom: 50%;
+    margin-top:10px;
+    box-shadow: 0 2px 4px rgba(78, 31, 31, 0.1);
+}
+.link-share :hover {
+    background-color: #191f08;
+}
+strong{
+    padding-left: 20px;
+    font-style:inherit;
+}
+.input:focus {
+    border: 2px solid #cee24f;
+    box-shadow: 0 0 5px rgba(74, 144, 226, 0.5);
+}
+.board-border {
+    position: relative;
+    
+    height: 100%;
+    border: 2px solid #000;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    
 }
 
 .board {
@@ -43,9 +90,10 @@
     height: 100%;
     display: flex;
     flex-wrap: wrap;
+    border-radius: 5px;
 }
 
-.square {
+.PFsquare {
     width: 12.5%;
     height: 12.5%;
 }
@@ -56,11 +104,11 @@
 }
 
 .square-black {
-    background: #B59963
+    background: #458920
 }
 
 .square-white {
-    background: #F0D9B5
+    background: #d0d4ad
 }
 
 .board-square {
@@ -71,6 +119,8 @@
 .cursor-pointer {
     cursor: pointer;
 }
+
+
 
 .piece-container {
     cursor: grab;
@@ -101,5 +151,33 @@
     border: 2px solid white;
     border-radius: 10px;
 }
+.section-card {
+  background: radial-gradient(circle at 30% 70%, rgba(72, 11, 11, 0.492) 0%, transparent 50%),
+        radial-gradient(circle at 70% 30%, rgba(208, 71, 71, 0.248) 0%, transparent 50%);
+    
+    border-radius: 0.75rem;
+    padding: 1.25rem;
+    
+    border: 1px solid #374151;
+    margin-bottom: 1rem;
+   display:column;
+   margin-left :10%;
+  
+    
+}
+.button-is-primary{
+     
+    padding: 15px 25px;
+    background-color: #4CAF50;
+    color: rgb(12, 37, 3);
+    border-radius: 5px;
+   
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    margin-left: 50px;
+    margin-top:10px;
+    box-shadow: 0 2px 4px rgba(78, 31, 31, 0.1);
+}
+
 
 
