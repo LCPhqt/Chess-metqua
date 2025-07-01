@@ -12,7 +12,11 @@
 }
 
 .color-selection-dialog {
+<<<<<<< HEAD
     background: rgba(0, 0, 0, 0.92);
+=======
+    background: #451317;
+>>>>>>> cb05c10ef5bbf1cd54ac8c95329ef0120edb8f95
     padding: 2rem;
     border-radius: 20px;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
@@ -41,7 +45,11 @@
     display: flex;
     align-items: center;
     padding: 1rem;
+<<<<<<< HEAD
     border: 2px solid #2196f3;
+=======
+    border: 2px solid #160a1e;
+>>>>>>> cb05c10ef5bbf1cd54ac8c95329ef0120edb8f95
     border-radius: 12px;
     background: none;
     cursor: pointer;
@@ -53,7 +61,11 @@
 
 .color-button:hover {
     transform: translateY(-2px);
+<<<<<<< HEAD
     box-shadow: 0 2px 8px #2196f3;
+=======
+    box-shadow: 0 2px 8px #68225b;
+>>>>>>> cb05c10ef5bbf1cd54ac8c95329ef0120edb8f95
     background: linear-gradient(45deg, #2196f3, #1976d2);
     color: #fff;
 }
@@ -64,9 +76,15 @@
 }
 
 .white-button:hover {
+<<<<<<< HEAD
     background: linear-gradient(45deg, #e3f2fd, #fff);
     border-color: #2196f3;
     color: #1976d2;
+=======
+    background: linear-gradient(45deg, #d4d2b9, #FFB22C);
+    border-color: #c6a34a;
+    color: #221a0c;
+>>>>>>> cb05c10ef5bbf1cd54ac8c95329ef0120edb8f95
 }
 
 .black-button {
@@ -75,12 +93,18 @@
 }
 
 .black-button:hover {
+<<<<<<< HEAD
     background: linear-gradient(45deg, #222, #1976d2);
     border-color: #2196f3;
+=======
+    background: linear-gradient(45deg, #222, #872121);
+    border-color: #a85522;
+>>>>>>> cb05c10ef5bbf1cd54ac8c95329ef0120edb8f95
     color: #fff;
 }
 
 .random-button {
+<<<<<<< HEAD
     background: linear-gradient(45deg, #fff 50%, #222 50%);
     color: #2196f3;
 }
@@ -88,6 +112,15 @@
 .random-button:hover {
     background: linear-gradient(45deg, #e3f2fd 50%, #1976d2 50%);
     border-color: #2196f3;
+=======
+    background: linear-gradient(45deg, #872121 50%, #222 50%);
+    color: #2c141e;
+}
+
+.random-button:hover {
+    background: linear-gradient(45deg, #222 50%, #872121 50%);
+    border-color: #ececec;
+>>>>>>> cb05c10ef5bbf1cd54ac8c95329ef0120edb8f95
     color: #fff;
 }
 
@@ -102,7 +135,11 @@
 }
 
 .white-piece {
+<<<<<<< HEAD
     color: #1976d2;
+=======
+    color: #a37a0a;
+>>>>>>> cb05c10ef5bbf1cd54ac8c95329ef0120edb8f95
 }
 
 .black-piece {

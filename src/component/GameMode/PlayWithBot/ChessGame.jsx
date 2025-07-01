@@ -9,6 +9,7 @@ import { ChessBot } from './chess-bot';
 import PromotionDialog from './PromotionDialog';
 import './Style/ChessGame.css';
 
+
 const ChessGame = () => {
     const navigate = useNavigate();
     const location = useLocation();
@@ -68,6 +69,22 @@ const ChessGame = () => {
     useEffect(() => {
         resetGame();
     }, [playerColor]);
+
+   useEffect(() => {
+    if (gameStatus === 'checkmate' || gameStatus === 'stalemate') {
+        // Lưu lịch sử đấu với bot
+        const botHistory = JSON.parse(localStorage.getItem('botHistory') || '[]');
+        botHistory.push({
+            date: new Date().toLocaleString(),
+            playerColor,
+            result: gameStatus === 'checkmate'
+                ? (currentPlayer === playerColor ? 'Thua' : 'Thắng')
+                : 'Hòa',
+            moves: moveHistory.map(m => m.notation)
+        });
+        localStorage.setItem('botHistory', JSON.stringify(botHistory));
+    }
+}, [gameStatus]);
 
     const handleBotMove = async () => {
         try {
@@ -180,6 +197,10 @@ const ChessGame = () => {
         const moves = ChessEngine.getValidMoves(gameState, square, playerColor);
         setValidMoves(moves);
     };
+
+    const isValidMove = (row, col) => {
+    return validMoves.some(move => move.row === row && move.col === col);
+   };
 
     const clearSelection = () => {
         setSelectedSquare(null);
