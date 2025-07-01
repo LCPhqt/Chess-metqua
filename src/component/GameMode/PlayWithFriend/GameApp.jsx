@@ -7,6 +7,7 @@ import { db } from '../../../FireBase/config';
 import { doc } from 'firebase/firestore';
 
 
+
 function GameApp() {
   const [board, setBoard] = useState([]);
   const [isGameOver, setIsGameOver] = useState(false);
@@ -60,9 +61,12 @@ function GameApp() {
 
   const handleResetGame = async () => {
     await resetGame();
-    navigate('/');
+    navigate('/home');
   };
-
+ const handledisplaylink = (isOpen,onClose) => {
+    if (!isOpen) return null;
+    handleCopy();
+ };
  
 
   return (
@@ -74,6 +78,7 @@ function GameApp() {
             <span className="vertical-text">NEW GAME</span>
           </button>
         </h2>
+        
       )}
 
       <div className="board-container">
@@ -85,17 +90,11 @@ function GameApp() {
       {result && <p className="vertical-text">{result}</p>}
 
       {status === 'waiting' && (
-        <div className="notification is-link share-game">
-          <strong>Share this game to continue</strong>
-          <br /><br />
-          <div className="field has-addons">
-            <div className="control is-expanded">
-              <input type="text" className="input" readOnly value={shareableLink} />
-            </div>
-            <div className="control">
-              <button className="button is-info" onClick={handleCopy}>Copy</button>
-            </div>
-          </div>
+        <div className="section-card">
+          <strong>COPY VÀ SHARE ĐỂ CHƠI ONLINE</strong>
+          <button className="button-is-primary" onClick={handledisplaylink}>
+            COPY
+          </button>
         </div>
       )}
     </div>

@@ -151,7 +151,7 @@ body {
     z-index: 3;
     position: relative;
     transition: transform 0.2s ease;
-    border-radius: 12px;
+    border-radius: 5px;
 }
 
 .piece:hover {

@@ -5,6 +5,7 @@ import { useDrop } from 'react-dnd'
 import { handleMove } from './Game'
 import { gameSubject } from './Game'
 import Promote from './Promote'
+
 export default function BoardSquare({
   piece,
   black,
@@ -27,6 +28,7 @@ export default function BoardSquare({
     )
     return () => subscribe.unsubscribe()
   }, [position])
+  
   return (
     <div className="board-square" ref={drop}>
       <Square black={black}>
