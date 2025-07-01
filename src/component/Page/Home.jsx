@@ -12,6 +12,7 @@ import new_pic from '../../assets/new_pic.png';
 import new_pic1 from '../../assets/new_pic1.png'; 
 
 
+
 const ChessHomepage = () => {
     const { user, refreshUser } = useUser();
     const navigate = useNavigate();
@@ -244,7 +245,7 @@ const ChessHomepage = () => {
             toast.error('Có lỗi xảy ra khi cập nhật thông tin');
         }
     };
-
+    {/*ham lay lich su tran dau voi bot*/}
     useEffect(() => {
     const history = JSON.parse(localStorage.getItem('botHistory') || '[]');
     setBotHistory(history.reverse());
@@ -256,7 +257,9 @@ const ChessHomepage = () => {
             <div className="left-sidebar">
                 {/* Logo và tiêu đề */}
                 <div className="section-card">
-                    <h1 className="main-title">Cờ Vua Online</h1>
+                    <h1 className="main-title">Cờ Vua Online 
+                        <img src ='https://img.icons8.com/?size=100&id=WQV0m5UDUsBg&format=png&color=000000' alt='logo' className='logo'/>
+                    </h1>
                     <p className="subtitle">Chơi cờ vua trực tuyến</p>
                 </div>
 
@@ -325,6 +328,7 @@ const ChessHomepage = () => {
                 
             {/* Lịch sử đấu với máy*/}
             <div className="section-card">
+                <div className='history'>
                 <h3>Lịch sử đấu </h3>
                 {botHistory.length === 0 && <p>Chưa có ván nào.</p>}
                 <ul>
@@ -334,45 +338,60 @@ const ChessHomepage = () => {
                     </li>
                   ))}
                 </ul>
+                </div>
             </div>
             <div className="section-card">
-
+                  
                 </div>
             </div>  
             {/* News */}
             <div className="main-content">
                 <div className="parent">
+                    <h1 className='section-card' id='2'>
+                    Chào Mừng Đến Cờ Vua Online
+                </h1>
                 <h2 className='section-title'>
                     NEWS
                 </h2>   
-                <h1 className='section-card' id='1'></h1>
-                
-                
+                <div className='wrapper'>
                 <h1 className='section-card' id='1'>
                     Firouzja Defends Title, Wins 3rd Bullet Chess Championship
-                    < a href="https://chess.com/news" target="_blank" rel="noopener noreferrer">
+                    < a href="https://www.chess.com/news/view/firouzja-wins-2025-bullet-chess-championship-day-4" target="_blank" rel="noopener noreferrer">
                     <img src={new_pic} alt="new" width="500" className='image'/>
                     </a>
                     </h1>
                     
                 <h1 className='section-card' id='1'>
                     Do You Know This Famous Pattern?
-                    <a href="https://chess.com/news" target="_blank" rel="noopener noreferrer">
+                    <a href="https://www.chess.com/news/view/hikaru-nakamura-wins-bullet-brawl-june-28-2025" target="_blank" rel="noopener noreferrer">
                     <img src={"https://images.chesscomfiles.com/uploads/v1/news/1698742.b852491a.507x286o.b53f3aa8e640@2x.png"} alt="new" width="500" className='image'/>
                     </a>
                     </h1>
                  <h1 className='section-card' id='1'>
                    Rare Fourth Moves
-                   <a href="https://chess.com/news" target="_blank" rel="noopener noreferrer">
+                   <a href="https://www.chess.com/video/player/rare-fourth-moves" target="_blank" rel="noopener noreferrer">
                     <img src={"https://images.chesscomfiles.com/uploads/v1/video/9851.202e2ac5.507x286o.8bdc6c84f09d@2x.png"} alt="new" width="500" className='image'/>
                     </a>
                     </h1>
                  <h1 className='section-card' id='1'>
                     Do You Know This Famous Pattern?
-                    < a href="https://chess.com/news" target="_blank" rel="noopener noreferrer">
+                    < a href="https://www.chess.com/article/view/do-you-know-this-famous-pattern" target="_blank" rel="noopener noreferrer">
                     <img src={new_pic1} alt="new" width="500" className='image'/>
                     </a>
                     </h1>
+                <h1 className='section-card' id='1'>
+                    Best Openings for Beginners
+                    < a href="https://www.chess.com/vi/article/view/nhung-nuoc-khai-cuoc-tot-nhat-cho-nguoi-moi-choi" target="_blank" rel="noopener noreferrer">
+                    <img src={"https://images.chesscomfiles.com/uploads/v1/article/18056.6298ee3d.668x375o.8a46435f4238@2x.jpeg"} alt="new" width="500" className='image'/>
+                    </a>
+                    </h1>
+                <h1 className='section-card' id='1'>
+                    Chess Notation - The Language of Chess!
+                    < a href="https://www.chess.com/vi/article/view/ky-hieu-trong-co-vua-ngon-ngu-cua-co-vua" target="_blank" rel="noopener noreferrer">
+                    <img src={"https://images.chesscomfiles.com/uploads/v1/article/21100.4d676f45.668x375o.567b7dacac33@2x.jpeg"} alt="new" width="500" className='image'/>
+                    </a>
+                    </h1>    
+                    </div>
                     </div>
             </div>
             
@@ -708,7 +727,7 @@ const ChessHomepage = () => {
             
         <footer class="site-footer">
   <div class="footer-links">
-    <a href="/support">Support</a>
+    <a href="/support">Support </a>
     <span class="separator">•</span>
     <a href="/terms">Chess Terms</a>
     <span class="separator">•</span>

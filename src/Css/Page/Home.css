@@ -18,6 +18,7 @@
     z-index: 1;
     border-radius: 0.75rem;
     padding: 1.25rem;
+    
     border: 1px solid #374151;
     margin-bottom: 1rem;
     
@@ -29,7 +30,9 @@
     font-size: 1.5rem;
     font-weight: bold;
     margin-bottom: 0.5rem;
-    color: #d75f5f;
+    color: #b12121;
+    display: flex;
+    
 }
 
 .subtitle {
@@ -185,6 +188,7 @@
     background: radial-gradient(circle at 30% 70%, rgba(72, 11, 11, 0.492) 0%, transparent 50%),
         radial-gradient(circle at 70% 30%, rgba(208, 71, 71, 0.248) 0%, transparent 50%);
     z-index: 1;
+    
 }
 
 /* Modal Styles */
@@ -214,7 +218,7 @@
 }
 
 .modal-content {
-    background-color: #1f2937;
+    background-color: #49261c;
     border-radius: 0.75rem;
     padding: 0;
     max-width: 500px;
@@ -230,14 +234,14 @@
     justify-content: space-between;
     align-items: center;
     padding: 1.5rem;
-    border-bottom: 1px solid #374151;
+    border-bottom: 1px solid #522546;
 }
 
 .modal-header h2 {
     margin: 0;
     font-size: 1.25rem;
     font-weight: 600;
-    color: #f3f4f6;
+    color: #F4E7E1;
 }
 
 .modal-actions {
@@ -295,7 +299,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 0.75rem 0;
-    border-bottom: 1px solid #374151;
+    border-bottom: 1px solid #F4E7E1;
 }
 
 .player-info-item:last-child {
@@ -304,7 +308,7 @@
 
 .player-info-item label {
     font-weight: 500;
-    color: #9ca3af;
+    color: #F4E7E1;
     min-width: 120px;
 }
 
@@ -620,11 +624,40 @@
     height: auto;
     border-radius: 10px;
 }
+.wrapper {
+    grid-column-gap: 4.5rem;
+    grid-template-columns: repeat(2, 1fr);
+    display: grid;
+
+}
+.parent{
+    width: auto;
+  max-width: 1200px;
+  margin: 0 auto;
+
+}
+.history {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+.logo{
+    width: 50px;
+    height: 50px;
+    margin-left: 5px;
+    vertical-align: middle;
+    align-items: center;
+    justify-content: center;
+}
+
+
 /* Responsive Design */
 @media (max-width: 640px) {
     .chess-homepage {
         flex-direction: column;
         padding: 0.5rem;
+        
     }
     .left-sidebar {
         width: 100%;
@@ -632,8 +665,11 @@
     }
     .main-content {
         padding-left: 0;
+        padding-right: 5px;
         padding-top: 1rem;
         border-radius: 5px;
+        max-width: 1200px;
+        margin: 0 auto;
     }
     .modal-content {
         width: 95%;
@@ -650,5 +686,10 @@
     .player-info-item span {
         margin-left: 0;
         text-align: left;
+    }
+    .history {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
     }
 }
